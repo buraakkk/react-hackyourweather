@@ -18,7 +18,6 @@ const App = () => {
             );
           }}
         />
-
         <Route path="/:id" component={CityForecast} />
       </Switch>
     </Router>
