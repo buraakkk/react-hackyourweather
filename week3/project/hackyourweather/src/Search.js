@@ -9,7 +9,7 @@ const Search = (props) => {
         value={props.searchInput}
         onChange={(event) => props.setSearchInput(event.target.value)}
       />
-      <button onClick={props.WeatherFetch}>Search</button>
+      <button onClick={props.fetchWeather}>Search</button>
     </div>
   );
 };

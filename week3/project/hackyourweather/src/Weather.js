@@ -3,9 +3,7 @@ import City from "./City";
 import Search from "./Search";
 
 
-const Weather = () => {
-
-  const [cities, setCities] = useState([]);
+const Weather = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchInput, setSearchInput] = useState("");
@@ -14,7 +12,7 @@ const Weather = () => {
 
   const fetchSuccessful = (data) => {
     setError(null);
-    setCities((cities) => {
+    props.setCities((cities) => {
       const searchedCity = cities.some(
         (searched) => searched.name === data.name
       );
@@ -31,7 +29,7 @@ const Weather = () => {
   const fetchFinally = () => {
     setIsLoading(false);
   }
-  const WeatherFetch = async () => {
+  const fetchWeather = async () => {
     if (searchInput === "") {
       return fetchError(new Error("Search value cannot be empty"));
     }
@@ -68,7 +66,7 @@ const Weather = () => {
     <div className="Weather">
       <h1>Weather</h1>
       <Search
-        WeatherFetch={WeatherFetch}
+        fetchWeather={fetchWeather}
         searchInput={searchInput}
         setSearchInput={setSearchInput}
       />
@@ -77,15 +75,18 @@ const Weather = () => {
 
       {error && <p>{error.message}</p>}
 
-      {!isLoading && !error && cities.length === 0 && <p>Search a city</p>}
+      {!isLoading && !error && props.cities.length === 0 && (
+        <p>Search a city</p>
+      )}
 
-      {cities.length > 0 &&
-        cities.map((city) => (
+      {props.cities.length > 0 &&
+        props.cities.map((city) => (
           <City
             key={city.id}
             city={city}
-            cities={cities}
-            setCities={setCities}
+            cities={props.cities}
+            setCities={props.setCities}
+
           />
         ))}
     </div>

@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Weather from "./Weather";
-import CItyForecast from "./CItyForecast";
+import CityForecast from "./CityForecast";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-const  App = () => {
+const App = () => {
+  const [cities, setCities] = useState([]);
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={Weather} />
-        <Route path="/:cityId"  component={CItyForecast} />
+        <Route
+          path="/"
+          exact
+          component={(routeProps) => {
+            return (
+              <Weather {...routeProps} cities={cities} setCities={setCities} />
+            );
+          }}
+        />
+
+        <Route path="/:id" component={CityForecast} />
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;

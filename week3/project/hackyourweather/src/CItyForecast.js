@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   ResponsiveContainer,
   Area,
@@ -10,19 +10,16 @@ import {
   YAxis,
 } from "recharts";
 
-const CItyForecast = () => {
+const CityForecast = (props) => {
   const [forecast, setForecast] = useState();
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const params = useParams();
-
   useEffect(() => {
-    if (!params.cityId) {
+    if (!props.match.params.id) {
       return setError(new Error("Not found"));
     }
-    return getCityWeatherDetail(params.cityId);
-
-    async function getCityWeatherDetail(cityId) {
+    return getCityWeather(props.match.params.id);
+    async function getCityWeather(cityId) {
       setIsLoading(true);
       const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
       const url = `https://api.openweathermap.org/data/2.5/forecast?id=${cityId}&appid=${API_KEY}&units=metric`;
@@ -41,7 +38,6 @@ const CItyForecast = () => {
     }
     function fetchSuccessful(data) {
       const temp = data.list.map((tempItem) => {
-        console.log(data);
         return {
           name: data.city.name,
           country: data.city.country,
@@ -51,7 +47,7 @@ const CItyForecast = () => {
       });
       setForecast(temp);
     }
-  }, [params.cityId]);
+  }, [props.match.params.id]);
 
   return (
     <div className="forecast">
@@ -88,7 +84,7 @@ const CItyForecast = () => {
   );
 };
 
-export default CItyForecast;
+export default CityForecast;
 
 
 // This is the API that I take from: https://openweathermap.org/forecast5
