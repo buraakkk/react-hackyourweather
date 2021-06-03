@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
+  ResponsiveContainer,
   Area,
   AreaChart,
   CartesianGrid,
@@ -10,7 +11,7 @@ import {
 } from "recharts";
 
 const CItyForecast = () => {
-  const [cityDetails, setCityDetails] = useState();
+  const [forecast, setForecast] = useState();
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const params = useParams();
@@ -40,54 +41,55 @@ const CItyForecast = () => {
     }
     function fetchSuccessful(data) {
       const temp = data.list.map((tempItem) => {
+        console.log(data);
         return {
           name: data.city.name,
+          country: data.city.country,
           date: tempItem.dt_txt,
           temp: tempItem.main.temp,
-          country: data.city.country,
         };
       });
-      setCityDetails(temp);
+      setForecast(temp);
     }
   }, [params.cityId]);
 
   return (
-    <div>
+    <div className="forecast">
       {isLoading && <p>Loading..</p>}
       {error && <p>{error.message}</p>}
-      {!isLoading && !error && cityDetails && (
+      {!isLoading && !error && forecast && (
         <div>
-          <h1>5 days forecast</h1>
-          <h2>
-            {cityDetails[0].name},{cityDetails[0].country}
-          </h2>
-          <AreaChart
-            width={800}
-            height={400}
-            data={cityDetails}
-            margin={{
-              top: 10,
-              right: 30,
-              left: 0,
-              bottom: 0,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
-            <YAxis />
-            <Tooltip />
-            <Area
-              type="monotone"
-              dataKey="temp"
-              stroke="#8884d8"
-              fill="#8884d8"
-            />
-          </AreaChart>
+          <h2>5 days forecast</h2>
+          <h3>
+            {forecast[0].name}, {forecast[0].country}
+          </h3>
+          <ResponsiveContainer width="100%" height={400}>
+            <AreaChart
+              data={forecast}
+              margin={{
+                right: 50,
+              }}
+            >
+              <Area dataKey="temp" stroke="#b478ed" fill="#dabcf6" />
+              <XAxis dataKey="date" />
+              <YAxis />
+              <Tooltip />
+              <CartesianGrid opacity={0.5} vertical={false} />
+            </AreaChart>
+          </ResponsiveContainer>
         </div>
       )}
-      {!isLoading && <Link to="/">Back</Link>}
+      {!isLoading && !error && (
+        <Link className="back" to="/">
+          Back
+        </Link>
+      )}
     </div>
   );
 };
 
 export default CItyForecast;
+
+
+// This is the API that I take from: https://openweathermap.org/forecast5
+// This is the link that I benefit from to create the chart. https://github.com/leighhalliday/recharts-exodus-area-chart/tree/5ddf1a0e47bef65a04ca371ba561b807256d914c
