@@ -39,14 +39,39 @@
   cursor: pointer;
 }
 
-.forecast h2 {
+.CityWeather .Link {
+  font-size: 2rem;
+  color: #000;
+  text-decoration: none;
+  display: flex;
+}
+.CityWeather .Link:hover {
+  border-bottom: 5px solid black;
+  width: 75%;
+}
+.CityWeather .Link .link-icon {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: #f8f8ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+
+  /*  Remove overflow to see how it works　:) */
+  overflow: hidden;
+}
+
+.forecast h1 {
   background-color: #d6dbdf;
   width: 320px;
   padding: 30px 60px;
   margin: 25px auto 10px;
   text-align: center;
 }
-.forecast h3 {
+.forecast h2 {
   margin-left: 4rem;
 }
 .forecast .back {
@@ -60,8 +85,7 @@
   letter-spacing: 4px;
   overflow: hidden;
   box-shadow: 0 0 10px rgb(0, 0, 0, 1);
-  font-family: verdana;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bolder;
   text-decoration: none;
   background: linear-gradient(160deg, #666, #444);
