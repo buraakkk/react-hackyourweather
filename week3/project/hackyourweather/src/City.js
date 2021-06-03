@@ -10,7 +10,7 @@ const City = (props) => {
 
   return (
     <div className="CityWeather">
-      <Link to={`/${props.city.id}`}>
+      <Link className="Link" to={`/${props.city.id}`}>
         {props.city.name}, {props.city.sys.country}
       </Link>
       <h3>

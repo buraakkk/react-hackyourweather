@@ -55,10 +55,10 @@ const CityForecast = (props) => {
       {error && <p>{error.message}</p>}
       {!isLoading && !error && forecast && (
         <div>
-          <h2>5 days forecast</h2>
-          <h3>
+          <h1>5 days forecast</h1>
+          <h2>
             {forecast[0].name}, {forecast[0].country}
-          </h3>
+          </h2>
           <ResponsiveContainer width="100%" height={400}>
             <AreaChart
               data={forecast}
