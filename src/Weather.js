@@ -63,6 +63,7 @@ const Weather = (props) => {
   
   };
   return (
+    <div>
     <div className="Weather">
       <h1>Weather</h1>
       <Search
@@ -77,8 +78,9 @@ const Weather = (props) => {
 
       {!isLoading && !error && props.cities.length === 0 && (
         <p>Search a city</p>
-      )}
-
+        )}
+        </div>
+    <div className="Cities">
       {props.cities.length > 0 &&
         props.cities.map((city) => (
           <City
@@ -89,7 +91,8 @@ const Weather = (props) => {
 
           />
         ))}
-    </div>
+        </div>
+      </div>
   );
 }
 
