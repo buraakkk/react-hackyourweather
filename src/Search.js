@@ -1,15 +1,17 @@
 import React from "react";
-
 const Search = (props) => {
   return (
-    <div>
+    <div className="search">
       <input
+        className="search-input"
         placeholder="Search City"
         type="text"
         value={props.searchInput}
         onChange={(event) => props.setSearchInput(event.target.value)}
       />
-      <button onClick={props.fetchWeather}>Search</button>
+      <button className="search-icon" onClick={props.fetchWeather}>
+        Search
+      </button>
     </div>
   );
 };

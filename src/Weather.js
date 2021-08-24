@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import City from "./City";
 import Search from "./Search";
+import background from "./background.jpg";
+import "./App.css";
 
 const Weather = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -60,35 +62,37 @@ const Weather = (props) => {
     }
   };
   return (
-    <div>
-      <div className="Weather">
-        <h1>Weather Data</h1>
-        <Search
-          fetchWeather={fetchWeather}
-          searchInput={searchInput}
-          setSearchInput={setSearchInput}
-        />
-
-        {isLoading && <p>Loading...</p>}
-
-        {error && <p>{error.message}</p>}
-
-        {!isLoading && !error && props.cities.length === 0 && (
-          <p>Search a city</p>
-        )}
+    <>
+      <div
+        className="landing-wrapper"
+        style={{ backgroundImage: `url(${background})` }}
+      >
+        <div className="Weather">
+          <h1>Get temperature, expections and more...</h1>
+          <Search
+            fetchWeather={fetchWeather}
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
+          />
+          {isLoading && <p>Loading...</p>}
+          {error && <p>{error.message}</p>}
+          {!isLoading && !error && props.cities.length === 0 && (
+            <p>Search a city</p>
+          )}
+        </div>
+        <div className="Cities">
+          {props.cities.length > 0 &&
+            props.cities.map((city) => (
+              <City
+                key={city.id}
+                city={city}
+                cities={props.cities}
+                setCities={props.setCities}
+              />
+            ))}
+        </div>
       </div>
-      <div className="Cities">
-        {props.cities.length > 0 &&
-          props.cities.map((city) => (
-            <City
-              key={city.id}
-              city={city}
-              cities={props.cities}
-              setCities={props.setCities}
-            />
-          ))}
-      </div>
-    </div>
+    </>
   );
 };
 

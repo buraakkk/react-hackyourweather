@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const City = (props) => {
-  
   const removeCity = async (deleteCity) => {
-    const cityDeleted = await props.cities.filter((city) => city !== deleteCity);
+    const cityDeleted = await props.cities.filter(
+      (city) => city !== deleteCity
+    );
     props.setCities((cities) => cityDeleted);
   };
 

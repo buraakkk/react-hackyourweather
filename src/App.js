@@ -1,30 +1,57 @@
 import React, { useState } from "react";
 import Weather from "./Weather";
-import Header from "./Header";
+import Navbar from "./Navbar";
 import InfoPage from "./InfoPage";
+import CovidPage from "./CovidPage";
 import CityForecast from "./CityForecast";
+import Footer from "./Footer";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
   const [cities, setCities] = useState([]);
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/info" component={InfoPage} />
-        <Route
-          path="/"
-          exact
-          component={(routeProps) => {
-            return (
-              <Weather {...routeProps} cities={cities} setCities={setCities} />
-            );
-          }}
+    <>
+      <Router>
+        <Navbar
+          links={[
+            {
+              to: "/",
+              text: "Home",
+            },
+            {
+              to: "/info",
+              text: "About",
+              isRoute: true,
+            },
+            {
+              to: "/covid",
+              text: "Covid 19",
+              isRoute: true,
+            },
+          ]}
         />
-        <Route path="/:id" component={CityForecast} />
-      </Switch>
-    </Router>
+        <Switch>
+          <Route exact path="/info" component={InfoPage} />
+          <Route exact path="/covid" component={CovidPage} />
+          <Route
+            path="/"
+            exact
+            component={(routeProps) => {
+              return (
+                <Weather
+                  {...routeProps}
+                  cities={cities}
+                  setCities={setCities}
+                />
+              );
+            }}
+          />
+          <Route path="/:id" component={CityForecast} />
+        </Switch>
+      </Router>
+      <Footer />
+    </>
   );
 };
 
