@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Install
 ```
 git clone https://github.com/buraakkk/react-hackyourweather.git
-cd react-hackyourweather
+cd project
 npm install 
 npm run build
 ```
