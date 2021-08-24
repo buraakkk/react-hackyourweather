@@ -1,6 +1,6 @@
 # 👋WELCOME TO MY React Weather APP👋
 
-# ✨[Demo](https://hackyourweatherr.herokuapp.com/#)
+# ✨[Demo](https://hackyourweatherr.herokuapp.com/)
 
 ![image](https://user-images.githubusercontent.com/50028862/130525731-afe335c3-bc00-43f8-bbc6-7a74a160f9ba.png)
 ![image](https://user-images.githubusercontent.com/50028862/130525768-3397ae8b-8772-4623-b52b-9d6a42038149.png)
