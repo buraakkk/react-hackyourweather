@@ -68,7 +68,7 @@ const Weather = (props) => {
         style={{ backgroundImage: `url(${background})` }}
       >
         <div className="Weather">
-          <h1>Get temperature, expections and more...</h1>
+          <h1>Get temperature, expectations and more...</h1>
           <Search
             fetchWeather={fetchWeather}
             searchInput={searchInput}

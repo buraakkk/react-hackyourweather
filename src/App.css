@@ -36,7 +36,7 @@
   width: 30px;
   height: 30px;
   float: right;
-  margin-top: -9rem;
+  margin-top: -14rem;
   margin-right: 0rem;
   border: 2px solid #000;
   border-radius: 50px;
@@ -108,7 +108,7 @@
   background-size: auto;
   background-repeat: no-repeat;
   background-position: top left;
-  height: 670px;
+  height: 900px;
 }
 .search {
   width: 30%;

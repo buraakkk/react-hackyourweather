@@ -1,127 +1,233 @@
 import React from "react";
+import { Container, Nav, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Container } from "react-bootstrap";
-
-const InfoPage = () => {
+import covid1 from "./info1.jpg";
+import covid2 from "./info2.png";
+import covid3 from "./info3.jpg";
+import covid4 from "./info4.png";
+import covid5 from "./info5.png";
+const CovidPage = () => {
   return (
-    <Container className="border" style={{ color: "teal" }}>
+    <Container className="border" style={{ color: "black" }}>
       <Container style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}>
-        <h2>
-          <a style={{ color: "teal", textDecoration: "none" }} href="#about">
-            About Bazaar
-          </a>
-        </h2>
-        <h2>
-          <a style={{ color: "teal", textDecoration: "none" }} href="#payment">
-            Payment
-          </a>
-        </h2>
-        <h2>
-          <a style={{ color: "teal", textDecoration: "none" }} href="#details">
-            Buy/Sell details
-          </a>
-        </h2>
-        <h2>
-          <a style={{ color: "teal", textDecoration: "none" }} href="#fqa">
-            FAQ
-          </a>
-        </h2>
-        <h2>
-          <a style={{ color: "teal", textDecoration: "none" }} href="#contact">
-            Contact Us
-          </a>
-        </h2>
+        <Nav className="me-auto">
+          <h4>
+            <Nav.Link
+              style={{ color: "black", textDecoration: "none" }}
+              href="#about"
+            >
+              Open Weather
+            </Nav.Link>
+          </h4>
+          <h4>
+            <Nav.Link
+              style={{ color: "black", textDecoration: "none" }}
+              href="#payment"
+            >
+              API
+            </Nav.Link>
+          </h4>
+          <h4>
+            <Nav.Link
+              style={{ color: "black", textDecoration: "none" }}
+              href="#details"
+            >
+              Pricing
+            </Nav.Link>
+          </h4>
+          <h4>
+            <Nav.Link
+              style={{ color: "black", textDecoration: "none" }}
+              href="#fqa"
+            >
+              Partners
+            </Nav.Link>
+          </h4>
+          <h4>
+            <Nav.Link
+              style={{ color: "black", textDecoration: "none" }}
+              href="#contact"
+            >
+              Contact Us
+            </Nav.Link>
+          </h4>
+        </Nav>
       </Container>
       <Container
         style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
         className="border"
         id="about"
       >
-        <h3>About Bazaar</h3>
-        <p style={{ fontSize: "1.1rem" }}>
-          About Bazaar, Bazaar is an online trading place in the Netherlands for
-          private and business providers of second-hand and new products. There
-          is something for everyone on Bazaar (founded in 2021). From furniture
-          and clothing to cars and everyday products, via Bazaar it finds a
-          second, third or even fourth life. On Bazaar, every deal makes a big
-          difference. we connect buyers and sellers. In this way, Bazaar users
-          contribute together to a world in which people share more and waste
-          less
-        </p>
-      </Container>
-      <Container
-        style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
-        className="border"
-        id="payment"
-      >
-        <h3>Payment</h3>
-        <p style={{ fontSize: "1.1rem" }}>
-          At Bazaar we are always innovating to make trading on Bazaar even
-          easier, safer and more fun. For example, with Payment Requests via
-          Stripe , our users pay even easier and safer.
-        </p>
+        <Row>
+          <Col>
+            <img
+              src={covid1}
+              className="img-fluid shadow-2-strong"
+              alt="..."
+              style={{ maxWidth: "36rem" }}
+            />
+          </Col>
+          <Col>
+            <h3>Weather data in a fast and elegant way</h3>
+            <p
+              style={{
+                fontSize: "1.3rem",
+                textAlign: "justify",
+                marginTop: "2rem",
+              }}
+            >
+              We are providing highly recognisable weather products that make
+              working with the weather data a way easier. We work with millions
+              of developers around a clock and believe that these benefits might
+              be suitable for most of applications, up to the complex enterprise
+              systems.
+            </p>
+          </Col>
+        </Row>
       </Container>
       <Container
         style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
         className="border"
         id="details"
       >
-        <h3>Buy/Sell Details</h3>
-
-        <p style={{ fontSize: "1.1rem" }}>
-          Bazaar is an advertising site that brings buyers and sellers together.
-          Despite the fact that the website is mainly characterized by its
-          accessible character, Bazaar sees it as its mission to advise them as
-          well as possible about pleasant, safe and responsible trading. The
-          website is very easy to use. Anyone can place an ad or sell products
-          there. All it takes is an email address and a few minutes of your
-          time. Currently, users can choose from 11 categories to place their ad
-          in; from Antiques and Art to Business Goods.
-        </p>
+        <Row>
+          <Col>
+            <h3>Historical weather for any location</h3>
+            <p
+              style={{
+                fontSize: "1.3rem",
+                textAlign: "justify",
+                marginTop: "2rem",
+              }}
+            >
+              Our new technology, Time Machine, has allowed us to enhance the
+              data in the Historical Weather Collection. Historical weather data
+              available for ANY coordinate The depth of historical data have
+              been extended to 40 YEARS You can download data from Personal
+              account or contact us to order it. The price is highly competitive
+              - only 10$ per location!
+            </p>
+          </Col>
+          <Col>
+            <img
+              src={covid2}
+              className="img-fluid shadow-2-strong"
+              alt="..."
+              style={{ maxWidth: "36rem" }}
+            />
+          </Col>
+        </Row>
+      </Container>
+      <Container
+        style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
+        className="border"
+        id="payment"
+      >
+        <Row>
+          <Col>
+            <img
+              src={covid3}
+              className="img-fluid shadow-2-strong"
+              alt="..."
+              style={{ maxWidth: "36rem" }}
+            />
+          </Col>
+          <Col>
+            <h3>Pricing</h3>
+            <p
+              style={{
+                fontSize: "1.3rem",
+                textAlign: "justify",
+                marginTop: "2rem",
+              }}
+            >
+              Get weather data for any location on the globe immediately with
+              our superb APIs! Just sign up with your email and start using
+              minute forecasts, hourly forecasts, history and other weather data
+              in your applications for free. For more functionality, please
+              consider our generous subscriptions.
+            </p>
+          </Col>
+        </Row>
       </Container>
       <Container
         style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
         className="border"
         id="fqa"
       >
-        <h3>FQA</h3>
-        <p style={{ fontSize: "1.1rem" }}>
-          How to find ads near me
-          <br /> Are you curious about advertisements in your area? Then use our
-          Filter on our website! This way you can immediately see on the map
-          what is for sale in your area.
-        </p>
-        <div style={{ fontSize: "1.1rem" }}>
-          How do I sign up for Bazaar?
-          <br /> If you want to use Bazaar , you can easily create an account.
-          With an account you benefit from the following handy options:{" "}
-          <ul style={{ fontSize: "1.1rem" }}>
-            <li> Advertise on Bazaar.</li>
-            <li>Making use of Payment Requests.</li>
-            <li>Save ads as favorite.</li>
-          </ul>
-        </div>
-        <p style={{ fontSize: "1.1rem" }}>
-          How do I delete my ads? <br /> Do you want to delete your ad? No
-          problem! If you use a laptop or PC, follow the steps below to remove
-          your ad: Log in to Bazaar . Go to My Products . Click Delete on the
-          add . Your ad has now been removed.
-        </p>
+        {" "}
+        <Row>
+          <Col>
+            <h3>Partners and solutions</h3>
+            <p
+              style={{
+                fontSize: "1.3rem",
+                textAlign: "justify",
+                marginTop: "2rem",
+              }}
+            >
+              <h4>
+                Google Weather-Based Campaign Management with OpenWeatherMap API
+              </h4>
+              Demand for certain products and services varies greatly depending
+              on the weather. For example, users are much more likely to search
+              for information on amusement parks on a hot, sunny day than if
+              it's cold and raining. An amusement park company may want to
+              increase their bids when the weather is nice, but doing so every
+              day would require a lot of manual work. With AdWords scripts,
+              however, it's possible to programmatically fetch weather
+              information and adjust bids in a matter of minutes.
+            </p>
+          </Col>
+          <Col>
+            <img
+              src={covid4}
+              className="img-fluid shadow-2-strong"
+              alt="..."
+              style={{ maxWidth: "36rem" }}
+            />
+          </Col>
+        </Row>
       </Container>
       <Container
         style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
         className="border"
         id="contact"
       >
-        <h3>
-          Have a question? :{" "}
-          <Link style={{ color: "teal" }} to="/ContactUsPage">
-            Contact us{" "}
-          </Link>{" "}
-        </h3>
+        <Row>
+          <Col>
+            <img
+              src={covid5}
+              className="img-fluid shadow-2-strong"
+              alt="..."
+              style={{ maxWidth: "36rem" }}
+            />
+          </Col>
+          <Col>
+            <h3>Have a question? </h3>
+            <p
+              style={{
+                fontSize: "1.4rem",
+                textAlign: "justify",
+                marginTop: "2rem",
+              }}
+            >
+              We are providing highly recognisable weather products that make
+              working with the weather data a way easier. We work with millions
+              of developers around a clock and believe that these benefits might
+              be suitable for most of applications, up to the complex enterprise
+              systems.
+            </p>
+            <h3>
+              <Link style={{ color: "black" }} to="/ContactUsPage">
+                Contact us{" "}
+              </Link>{" "}
+            </h3>
+          </Col>
+        </Row>
       </Container>
     </Container>
   );
 };
 
-export default InfoPage;
+export default CovidPage;

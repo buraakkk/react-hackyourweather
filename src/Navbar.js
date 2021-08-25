@@ -36,7 +36,7 @@ export default class Navbar extends Component {
             <img
               src={logo}
               style={{ width: "130px", objectFit: "cover", height: "70px" }}
-              alt="bazaar"
+              alt="open"
             />
           </a>
         </h1>

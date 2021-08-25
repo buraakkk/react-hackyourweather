@@ -1,127 +1,189 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Container } from "react-bootstrap";
-
-const InfoPage = () => {
+import { Container, Nav, Row, Col } from "react-bootstrap";
+import covid1 from "./covid1.jpg";
+import covid2 from "./covidTech.png";
+import covid3 from "./covidSearch.jpg";
+import covid4 from "./covidResponse.jpg";
+const CovidPage = () => {
   return (
-    <Container className="border" style={{ color: "teal" }}>
+    <Container className="border" style={{ color: "black" }}>
       <Container style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}>
-        <h2>
-          <a style={{ color: "teal", textDecoration: "none" }} href="#about">
-            About Bazaar
-          </a>
-        </h2>
-        <h2>
-          <a style={{ color: "teal", textDecoration: "none" }} href="#payment">
-            Payment
-          </a>
-        </h2>
-        <h2>
-          <a style={{ color: "teal", textDecoration: "none" }} href="#details">
-            Buy/Sell details
-          </a>
-        </h2>
-        <h2>
-          <a style={{ color: "teal", textDecoration: "none" }} href="#fqa">
-            FAQ
-          </a>
-        </h2>
-        <h2>
-          <a style={{ color: "teal", textDecoration: "none" }} href="#contact">
-            Contact Us
-          </a>
-        </h2>
+        <Nav className="me-auto">
+          <h4>
+            <Nav.Link
+              style={{ color: "black", textDecoration: "none" }}
+              href="#about"
+            >
+              Advice
+            </Nav.Link>
+          </h4>
+          <h4>
+            <Nav.Link
+              style={{ color: "black", textDecoration: "none" }}
+              href="#payment"
+            >
+              Technical guidance
+            </Nav.Link>
+          </h4>
+          <h4>
+            <Nav.Link
+              style={{ color: "black", textDecoration: "none" }}
+              href="#details"
+            >
+              Response
+            </Nav.Link>
+          </h4>
+          <h4>
+            <Nav.Link
+              style={{ color: "black", textDecoration: "none" }}
+              href="#fqa"
+            >
+              Research
+            </Nav.Link>
+          </h4>
+        </Nav>
       </Container>
       <Container
         style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
         className="border"
         id="about"
       >
-        <h3>About Bazaar</h3>
-        <p style={{ fontSize: "1.1rem" }}>
-          About Bazaar, Bazaar is an online trading place in the Netherlands for
-          private and business providers of second-hand and new products. There
-          is something for everyone on Bazaar (founded in 2021). From furniture
-          and clothing to cars and everyday products, via Bazaar it finds a
-          second, third or even fourth life. On Bazaar, every deal makes a big
-          difference. we connect buyers and sellers. In this way, Bazaar users
-          contribute together to a world in which people share more and waste
-          less
-        </p>
-      </Container>
-      <Container
-        style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
-        className="border"
-        id="payment"
-      >
-        <h3>Payment</h3>
-        <p style={{ fontSize: "1.1rem" }}>
-          At Bazaar we are always innovating to make trading on Bazaar even
-          easier, safer and more fun. For example, with Payment Requests via
-          Stripe , our users pay even easier and safer.
-        </p>
+        <Row>
+          <Col>
+            <h3>Advice for the public</h3>
+            <p
+              style={{
+                fontSize: "1.3rem",
+                textAlign: "justify",
+                marginTop: "2rem",
+              }}
+            >
+              Maintain at least a 1-metre distance between yourself and others
+              to reduce your risk of infection when they cough, sneeze or speak.
+              Maintain an even greater distance between yourself and others when
+              indoors. The further away, the better. Make wearing a mask a
+              normal part of being around other people. The appropriate use,
+              storage and cleaning or disposal are essential to make masks as
+              effective as possible. The further away, the better. Make wearing
+              a mask a normal part of being around other people.
+            </p>
+          </Col>
+          <Col>
+            <img
+              src={covid1}
+              className="img-fluid shadow-2-strong"
+              alt="..."
+              style={{ maxWidth: "36rem" }}
+            />
+          </Col>
+        </Row>
       </Container>
       <Container
         style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
         className="border"
         id="details"
       >
-        <h3>Buy/Sell Details</h3>
-
-        <p style={{ fontSize: "1.1rem" }}>
-          Bazaar is an advertising site that brings buyers and sellers together.
-          Despite the fact that the website is mainly characterized by its
-          accessible character, Bazaar sees it as its mission to advise them as
-          well as possible about pleasant, safe and responsible trading. The
-          website is very easy to use. Anyone can place an ad or sell products
-          there. All it takes is an email address and a few minutes of your
-          time. Currently, users can choose from 11 categories to place their ad
-          in; from Antiques and Art to Business Goods.
-        </p>
+        <Row>
+          <Col>
+            <img
+              src={covid2}
+              className="img-fluid shadow-2-strong"
+              alt="..."
+              style={{ maxWidth: "36rem" }}
+            />
+          </Col>
+          <Col>
+            <h3>Response</h3>
+            <p
+              style={{
+                fontSize: "1.3rem",
+                textAlign: "justify",
+                marginTop: "2rem",
+              }}
+            >
+              The Weekly Epidemiological Update provides an overview of the
+              global, regional and country-level COVID-19 cases and deaths,
+              highlighting key data and trends; as well as other pertinent
+              epidemiological information concerning the COVID-19 pandemic. The
+              COVID-19 Weekly Operational Update reports on WHO and partners’
+              actions in response to the pandemic.
+            </p>
+          </Col>
+        </Row>
+      </Container>
+      <Container
+        style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
+        className="border"
+        id="payment"
+      >
+        <Row>
+          <Col>
+            <h3>Status of environmental surveillance for SARS-CoV-2 virus</h3>
+            <p
+              style={{
+                fontSize: "1.3rem",
+                textAlign: "justify",
+                marginTop: "2rem",
+              }}
+            >
+              Environmental surveillance by testing of wastewater for evidence
+              of pathogens has a long history of use in public health,
+              particularly for poliovirus1 and more recently antimicrobial
+              resistance (AMR).2 In the context of the ongoing COVID-19
+              pandemic, it is being used for the detection of SARS-CoV-2 shed
+              into wastewater from the upper gastrointestinal and upper
+              respiratory system and via faeces.
+            </p>
+          </Col>
+          <Col>
+            <img
+              src={covid3}
+              className="img-fluid shadow-2-strong"
+              alt="..."
+              style={{ maxWidth: "36rem" }}
+            />
+          </Col>
+        </Row>
       </Container>
       <Container
         style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
         className="border"
         id="fqa"
       >
-        <h3>FQA</h3>
-        <p style={{ fontSize: "1.1rem" }}>
-          How to find ads near me
-          <br /> Are you curious about advertisements in your area? Then use our
-          Filter on our website! This way you can immediately see on the map
-          what is for sale in your area.
-        </p>
-        <div style={{ fontSize: "1.1rem" }}>
-          How do I sign up for Bazaar?
-          <br /> If you want to use Bazaar , you can easily create an account.
-          With an account you benefit from the following handy options:{" "}
-          <ul style={{ fontSize: "1.1rem" }}>
-            <li> Advertise on Bazaar.</li>
-            <li>Making use of Payment Requests.</li>
-            <li>Save ads as favorite.</li>
-          </ul>
-        </div>
-        <p style={{ fontSize: "1.1rem" }}>
-          How do I delete my ads? <br /> Do you want to delete your ad? No
-          problem! If you use a laptop or PC, follow the steps below to remove
-          your ad: Log in to Bazaar . Go to My Products . Click Delete on the
-          add . Your ad has now been removed.
-        </p>
-      </Container>
-      <Container
-        style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
-        className="border"
-        id="contact"
-      >
-        <h3>
-          Have a question? :{" "}
-          <Link style={{ color: "teal" }} to="/ContactUsPage">
-            Contact us{" "}
-          </Link>{" "}
-        </h3>
+        {" "}
+        <Row>
+          <Col>
+            <img
+              src={covid4}
+              className="img-fluid shadow-2-strong"
+              alt="..."
+              style={{ maxWidth: "36rem" }}
+            />
+          </Col>
+          <Col>
+            <h3>Research</h3>
+            <p
+              style={{
+                fontSize: "1.3rem",
+                textAlign: "justify",
+                marginTop: "2rem",
+              }}
+            >
+              Global research on coronavirus disease (COVID-19)
+              <br /> WHO is bringing the world’s scientists and global health
+              professionals together to accelerate the research and development
+              process, and develop new norms and standards to contain the spread
+              of the coronavirus pandemic and help care for those affected. The
+              R&D Blueprint has been activated to accelerate diagnostics,
+              vaccines and therapeutics for this novel coronavirus. The
+              solidarity of all countries will be essential to ensure equitable
+              access to COVID-19 health products.
+            </p>
+          </Col>
+        </Row>
       </Container>
     </Container>
   );
 };
 
-export default InfoPage;
+export default CovidPage;
