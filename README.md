@@ -1,3 +1,30 @@
+# 👋WELCOME TO MY React Weather APP👋
+
+# ✨[Demo](https://hackyourweatherr.herokuapp.com/)
+
+![image](https://user-images.githubusercontent.com/50028862/130768210-93c5041c-a8fc-4621-90e9-314381959c7d.png)
+![image](https://user-images.githubusercontent.com/50028862/130768252-fa5425c4-d373-437b-a6da-f92ae220ec13.png)
+![image](https://user-images.githubusercontent.com/50028862/130768317-6e618c09-4601-4427-893a-c71738776c98.png)
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app/#)
+
+## Install
+```
+git clone https://github.com/buraakkk/react-hackyourweather.git
+cd project
+npm install 
+npm run build
+```
+## Usage
+```
+npm start
+```
+## 🤝Contributing🤝
+Contributions, issues and feature requests are welcome!
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
