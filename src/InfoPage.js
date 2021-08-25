@@ -88,7 +88,7 @@ const CovidPage = () => {
       <Container
         style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
         className="border"
-        id="details"
+        id="payment"
       >
         <Row>
           <Col>
@@ -121,7 +121,7 @@ const CovidPage = () => {
       <Container
         style={{ marginTop: "2%", marginBottom: "2%", padding: "1%" }}
         className="border"
-        id="payment"
+        id="details"
       >
         <Row>
           <Col>

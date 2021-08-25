@@ -20,17 +20,17 @@ const CovidPage = () => {
           <h4>
             <Nav.Link
               style={{ color: "black", textDecoration: "none" }}
-              href="#payment"
+              href="#details"
             >
-              Technical guidance
+              Response
             </Nav.Link>
           </h4>
           <h4>
             <Nav.Link
               style={{ color: "black", textDecoration: "none" }}
-              href="#details"
+              href="#payment"
             >
-              Response
+              Technical guidance
             </Nav.Link>
           </h4>
           <h4>
